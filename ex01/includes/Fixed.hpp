@@ -6,7 +6,7 @@
 /*   By: obouayed <obouayed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 22:15:52 by obouayed          #+#    #+#             */
-/*   Updated: 2025/03/12 02:27:24 by obouayed         ###   ########.fr       */
+/*   Updated: 2025/03/13 06:49:00 by obouayed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,7 @@ class Fixed
 	float toFloat(void) const;
 	int toInt(void) const;
 };
+
+std::ostream &operator<<(std::ostream &out, const Fixed &fixed);
 
 #endif
