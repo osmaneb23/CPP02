@@ -6,7 +6,7 @@
 /*   By: obouayed <obouayed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 22:15:49 by obouayed          #+#    #+#             */
-/*   Updated: 2025/03/13 06:52:57 by obouayed         ###   ########.fr       */
+/*   Updated: 2025/03/17 10:04:35 by obouayed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,4 +73,108 @@ std::ostream &operator<<(std::ostream &out, const Fixed &fixed)
 {
 	out << fixed.toFloat();
 	return (out);
+}
+
+bool Fixed::operator>(const Fixed &obj) const
+{
+	return (this->_raw > obj.getRawBits());
+}
+
+bool Fixed::operator<(const Fixed &obj) const
+{
+	return (this->_raw < obj.getRawBits());
+}
+
+bool Fixed::operator>=(const Fixed &obj) const
+{
+	return (this->_raw >= obj.getRawBits());
+}
+
+bool Fixed::operator<=(const Fixed &obj) const
+{
+	return (this->_raw <= obj.getRawBits());
+}
+
+bool Fixed::operator==(const Fixed &obj) const
+{
+	return (this->_raw == obj.getRawBits());
+}
+
+bool Fixed::operator!=(const Fixed &obj) const
+{
+	return (this->_raw != obj.getRawBits());
+}
+
+Fixed Fixed::operator+(const Fixed &obj) const
+{
+	Fixed result;
+	result.setRawBits(this->_raw + obj.getRawBits());
+	return (result);
+}
+
+Fixed Fixed::operator-(const Fixed &obj) const
+{
+	Fixed result;
+	result.setRawBits(this->_raw - obj.getRawBits());
+	return (result);
+}
+
+Fixed Fixed::operator*(const Fixed &obj) const
+{
+	return (Fixed(this->toFloat() * obj.toFloat()));
+}
+
+Fixed Fixed::operator/(const Fixed &obj) const
+{
+	return (Fixed(this->toFloat() / obj.toFloat()));
+}
+
+// Pre-increment
+Fixed &Fixed::operator++(void)
+{
+	this->_raw++;
+	return (*this);
+}
+
+// Post-increment
+Fixed Fixed::operator++(int)
+{
+	Fixed old = *this;
+	++(*this);
+	return (old);
+}
+
+// Pre-decrement
+Fixed &Fixed::operator--(void)
+{
+	this->_raw--;
+	return (*this);
+}
+
+// Post-decrement
+Fixed Fixed::operator--(int)
+{
+	Fixed old = *this;
+	--(*this);
+	return (old);
+}
+
+Fixed &Fixed::min(Fixed &a, Fixed &b)
+{
+	return (a < b ? a : b);
+}
+
+const Fixed &Fixed::min(const Fixed &a, const Fixed &b)
+{
+	return (a < b ? a : b);
+}
+
+Fixed &Fixed::max(Fixed &a, Fixed &b)
+{
+	return (a > b ? a : b);
+}
+
+const Fixed &Fixed::max(const Fixed &a, const Fixed &b)
+{
+	return (a > b ? a : b);
 }
