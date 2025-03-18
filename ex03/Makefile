@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: obouayed <obouayed@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/03/10 10:00:00 by obouayed          #+#    #+#              #
-#    Updated: 2025/03/17 10:10:04 by obouayed         ###   ########.fr        #
+#    Created: 2025/03/18 18:20:00 by obouayed          #+#    #+#              #
+#    Updated: 2025/03/18 18:02:07 by obouayed         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,8 +22,7 @@ OBJDIR = obj
 INCDIR = includes
 
 # Header files
-INCLUDES = $(INCDIR)/Fixed.hpp \
-           $(INCDIR)/Point.hpp
+INCLUDES = $(INCDIR)/Fixed.hpp $(INCDIR)/Point.hpp
 
 # Source files
 SRCS = $(SRCDIR)/main.cpp \
