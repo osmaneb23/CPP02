@@ -6,7 +6,7 @@
 /*   By: obouayed <obouayed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 18:15:00 by obouayed          #+#    #+#             */
-/*   Updated: 2025/03/18 18:02:50 by obouayed         ###   ########.fr       */
+/*   Updated: 2025/03/27 19:37:06 by obouayed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void testPoint(const Point &a, const Point &b, const Point &c, const Point &poin
     if (bsp(a, b, c, point))
         std::cout << "Point is inside the triangle!" << std::endl;
     else
-        std::cout << "Point is outside the triangle or on an edge/vertex." << std::endl;
+        std::cout << "Point is outside the triangle." << std::endl;
 }
 
 int main()
